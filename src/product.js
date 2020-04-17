@@ -1,9 +1,9 @@
 class product{
-    constructor(name, price, pricePerWeek, pricePerMonth){
+    constructor(name, price){
         this.name = name;
         this.price = price;
-        this.pricePerWeek = pricePerWeek;
-        this.pricePerMonth = pricePerMonth;
+        this.pricePerWeek = 0;
+        this.pricePerMonth = 0;
     }
 }
 
