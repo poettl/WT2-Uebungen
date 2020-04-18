@@ -1,9 +1,3 @@
-// id:1,
-// kundenId:1,
-// price: 100,
-// dauer: 1000,
-// bezahlt: true,
-// date: new Date()
 class deliverynotes {
   constructor(id, customer, price, count, paid, date) {
     this.id = id;
