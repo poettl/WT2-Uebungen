@@ -1,4 +1,4 @@
-import deliverynotes from '../src/deliverynotes';
+import deliverynotes from '../src/deliverynotes'; // TODO: Fix import troubles
 
 var assert = require('assert');
 let testDeliveryNotes = new deliverynotes(
