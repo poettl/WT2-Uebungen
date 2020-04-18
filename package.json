@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-server": "webpack-dev-server",
-    "test": "mocha"
+    "test": "mocha",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
