@@ -1,8 +1,11 @@
 
-import deliverynotes from '../src/deliverynotes'; // TODO: Fix import troubles
-import Product from '../src/product'
-var assert = require('assert')
+import testProduct from './product.test';
 
+testProduct();
+
+//@peter: ab hier gehört alles in ein eigenes file
+import deliverynotes from '../src/deliverynotes'; // TODO: Fix import troubles
+var assert = require('assert')
 
 let testDeliveryNotes = new deliverynotes(
   '1',
@@ -26,11 +29,4 @@ describe('deliverynotes', function () {
   });
 });
 
-describe('products', function () {
-    describe('#getPricePerDay', function () {
-        it('should return the right price per day for a set price', function () {
-            let testProduct = new Product("bagger", 100, 0.05)
-            assert.equal(testProduct.pricePerDay, 2280)
-        });
-    });
-});
+
