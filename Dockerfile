@@ -8,11 +8,13 @@ COPY ./test ./test
 COPY .babelrc .
 COPY package.json .
 COPY webpack.config.js .
+COPY .babelrc .
 
 RUN npm install
 
 EXPOSE 8080
 
-RUN npm run test
-CMD ["npm","run","start"]
+# RUN npm test
+ENTRYPOINT [ "npm" ]
+CMD ["test"]
 
