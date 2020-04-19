@@ -13,5 +13,6 @@ RUN npm install
 EXPOSE 8080
 
 # RUN npm test
-CMD ["npm","run","start"]
+ENTRYPOINT [ "npm" ]
+CMD ["test"]
 
