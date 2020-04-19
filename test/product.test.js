@@ -2,7 +2,7 @@ import Product from '../src/product'
 var assert = require('assert')
 
 const testProduct = () => {
-    describe('products', function () {
+    describe('Product', function () {
         let testProduct = new Product("bagger", 100, 0.05)
         describe('#getPricePerDay', function () {
             it('should return the right price per day for a set price', function () {
