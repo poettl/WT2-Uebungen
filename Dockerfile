@@ -7,6 +7,7 @@ COPY ./src ./src
 COPY ./test ./test
 COPY package.json .
 COPY webpack.config.js .
+COPY .babelrc .
 
 RUN npm install
 
