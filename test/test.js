@@ -1,3 +1,4 @@
+
 // import deliverynotes from '../src/deliverynotes'; // TODO: Fix import troubles
 
 // var assert = require('assert');
@@ -22,3 +23,16 @@
 //     });
 //   });
 // });
+
+
+/* var assert = require('assert')
+
+describe('products', function () {
+    describe('#getPricePerDay', function () {
+        it('should return the right price per week for a set price', function () {
+            let testProduct = Product("bagger", 100, 0.05)
+            assert.equal(testProduct.pricePerDay, 665)
+        });
+    });
+});
+ */
