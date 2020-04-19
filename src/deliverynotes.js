@@ -8,11 +8,11 @@ class deliverynotes {
     this.date = date;
   }
 
-  hasPaid() {
+  get hasPaid() {
     return this.paid;
   }
 
-  totalPrice() {
+  get totalPrice() {
     return this.price * this.count;
   }
 }
