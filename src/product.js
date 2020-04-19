@@ -21,12 +21,12 @@ class product{
         this._price = price;
     }
 
-    get pricePerWeek(){
-        return this._price * 7 * (1-_massDiscount); //applies the mass discount 
+    get pricePerDay(){
+        return this._price * 24 * (1-_massDiscount); //applies the mass discount, if it's booked for a day
     }
 
-    get pricePerMonth(){
-        return this._price * 30 * (1-_massDiscount*2) //doubles the mass discount for the month
+    get pricePerWeek(){
+        return this._price * 24 * 7 * (1-_massDiscount*2) //doubles the mass discount for the week
     }
 }
 
