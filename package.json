@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha ./test/index.test.js --require @babel/register",
     "start": "webpack-dev-server"
   },
   "repository": {
@@ -17,7 +17,12 @@
     "url": "https://github.com/poettl/wt2-uebung2/issues"
   },
   "homepage": "https://github.com/poettl/wt2-uebung2#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/register": "^7.9.0"
+  },
   "devDependencies": {
     "mocha": "^7.1.1",
     "webpack": "^4.42.1",
