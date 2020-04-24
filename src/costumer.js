@@ -18,7 +18,6 @@ class costumer{
     get adress(){
         return this._adress;
     }
-
     set adress(adress){
         if(adress != "" && adress != null){
             this._adress=adress;
@@ -28,7 +27,6 @@ class costumer{
     get telnumber(){
         return this._telnumber;
     }
-
     set telnumber(telnumber){
         if(telnumber != "" && telnumber != null){
             this._telnumber=telnumber;
@@ -38,7 +36,6 @@ class costumer{
     get email(){
         return this._email;
     }
-   
     set email(email){
         if(email != "" && email != null){
             this._email=email;
