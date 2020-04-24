@@ -30,7 +30,9 @@ class costumer{
     }
 
     set telnumber(telnumber){
-        this._telnumber=telnumber;
+        if(telnumber != "" && telnumber != null){
+            this._telnumber=telnumber;
+        }
     }
 
     get email(){
@@ -38,7 +40,9 @@ class costumer{
     }
    
     set email(email){
-        this._email=email;
+        if(email != "" && email != null){
+            this._email=email;
+        }
     }
 }
 
