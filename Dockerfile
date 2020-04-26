@@ -7,11 +7,10 @@ COPY ./src ./src
 COPY ./test ./test
 COPY package.json .
 COPY webpack.config.js .
+COPY .babelrc .
 
 RUN npm install
 
-EXPOSE 8080
-
-# RUN npm test
-CMD ["npm","run","start"]
+ENTRYPOINT [ "npm" ]
+CMD ["test"]
 

@@ -1,18 +1,19 @@
 class deliverynotes {
-  constructor(id, customer, price, count, paid, date) {
+  constructor(id, customer, price, count, paid, date, product) {
     this.id = id;
     this.customer = customer;
     this.price = price;
+    this.product = product;
     this.count = count;
     this.paid = paid;
     this.date = date;
   }
 
-  hasPaid() {
+  get hasPaid() {
     return this.paid;
   }
 
-  totalPrice() {
+  get totalPrice() {
     return this.price * this.count;
   }
 }
