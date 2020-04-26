@@ -6,13 +6,13 @@ const testProduct = () => {
     describe('Product', () => {
         let testProduct = new Product("bagger", 100, 0.05, 0.2) //5% Discount, 20% Tax in Austria
         describe('#getPricePerDay', () => {
-            it('should calc and return the right price per day for a set hourly price, including taxes', () => {
-                assert.equal(testProduct.pricePerDay, 2736); //then it calculated the price right
+            it('should calc and return the right price per day for a set hourly price, including taxes and a discount', () => {
+                assert.equal(testProduct.calcPricePerDay(), 2736); //then it calculated the price right
             });
         });
         describe('#getPricePerWeek', () => {
-            it('should calc and return the right price per week for a set hourly price, including taxes', () => {
-                assert.equal(testProduct.pricePerWeek, 18144); //then it calculated the price right
+            it('should calc and return the right price per week for a set hourly price, including taxes and a discount', () => {
+                assert.equal(testProduct.calcPricePerWeek(), 18144); //then it calculated the price right
             })
         })
         describe('#setName', () => {
@@ -22,11 +22,11 @@ const testProduct = () => {
             });
             it('should not change the name if the value passed in is null', () => {
                 testProduct.name = null;
-                assert.notEqual(testProduct, null) //if it is not null, the filter worked
+                assert.notEqual(testProduct.name, null) //if it is not null, the filter worked
             })
             it('should not change the name if an empty string is passed', () => {
                 testProduct.name = "";
-                assert.notEqual(testProduct, ""); //if it is not set to the empty string, the filter worked
+                assert.notEqual(testProduct.name, ""); //if it is not set to the empty string, the filter worked
             });
         });
         describe('#setPrice', () => {
@@ -45,7 +45,8 @@ const testProduct = () => {
         })
         describe('#getTaxAmount', function(){
             it('should display the taxes that need to be payed in addition to the price', () => {
-                assert.equal(testProduct.taxAmount, 40) // 20% of 200, which was set before
+                let taxAmount = testProduct.calcTaxAmount();
+                assert.equal(taxAmount, 40) // 20% of 200, which was set before
             })
         })
     });

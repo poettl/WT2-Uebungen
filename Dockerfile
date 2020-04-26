@@ -1,4 +1,4 @@
-FROM node:current-slim
+FROM node:alpine3.10
 
 WORKDIR /usr/src/aufgabe3
 
