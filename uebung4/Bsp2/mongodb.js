@@ -2,7 +2,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 var url = 'mongodb://localhost:27017/';
-class Deliverynotes {
+class DeliverynotesClass {
   constructor(customer, price, count, paid, date, product) {
     this.customer = customer;
     this.price = price;
@@ -33,7 +33,7 @@ class Deliverynotes {
 //   function (err, db) {
 //     if (err) throw err;
 //     var dbo = db.db('mydb');
-//     let dn1 = new Deliverynotes(1, 10.0, 1, false, new Date(), 1);
+//     let dn1 = new DeliverynotesClass(1, 10.0, 1, false, new Date(), 1);
 //     dbo.collection('customers').insertOne(dn1, function (err, res) {
 //       if (err) throw err;
 //       console.log('1 document inserted');
@@ -73,6 +73,23 @@ var DeliverynotesSchema = new mongoose.Schema({
   count: Number,
   paid: Boolean,
   date: Date,
+});
+var Deliverynotes = mongoose.model('Deliverynotes', DeliverynotesSchema);
+var dn1 = new Deliverynotes({
+  customer: 1,
+  price: 10,
+  product: 1,
+  count: 5,
+  paid: false,
+  date: new Date(),
+});
+// dn1.save(function (err, fluffy) {
+//   if (err) return console.error(err);
+//   console.log('saved');
+// });
+Deliverynotes.find(function (err, dns) {
+  if (err) return console.error(err);
+  console.log(dns);
 });
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
