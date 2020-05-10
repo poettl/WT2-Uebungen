@@ -1,3 +1,4 @@
+// docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:latest
 import mysql from 'mysql';
 import Sequelize from 'sequelize';
 class Deliverynotes {
