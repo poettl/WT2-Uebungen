@@ -12,9 +12,9 @@ class Deliverynote {
     this.date = date;
   }
 }
-// Construct a schema, using GraphQL schema language
 var schema = buildSchema(`
 type Deliverynote {
+    id: Int,
     customer: Int,
     price: Float,
     count: Int,
@@ -34,7 +34,6 @@ var myobj = [
   new Deliverynote(5, 5, 11.0, 7, true, new Date().toDateString(), 5),
 ];
 
-// The root provides a resolver function for each API endpoint
 var root = {
   deliverynotes: () => {
     return myobj;
