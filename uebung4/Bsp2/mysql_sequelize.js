@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 const sequelize = new Sequelize('wt', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql',

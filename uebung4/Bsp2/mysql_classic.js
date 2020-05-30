@@ -1,6 +1,5 @@
 // docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:latest
-var mysql = require('mysql');
-
+const mysql = require('mysql2');
 class Deliverynotes {
   constructor(customer, price, count, paid, date, product) {
     this.customer = customer;
@@ -61,12 +60,11 @@ connection.connect(function (err) {
   let dn4 = new Deliverynotes(4, 12.0, 5, false, new Date(), 4);
   let dn5 = new Deliverynotes(5, 14.0, 6, true, new Date(), 7);
   var sqlSelect = 'SELECT * FROM wt.deliverynotes';
-  var sqlInsert = `INSERT INTO wt.deliverynotes (customer, price, count, paid, date, product) VALUES (${getSQLStringForInsert(
-    dn1
-  )}),(${getSQLStringForInsert(dn2)}),(${getSQLStringForInsert(
-    dn3
-  )}),(${getSQLStringForInsert(dn4)}),(${getSQLStringForInsert(
-    dn1
+  var sqlInsert = `INSERT INTO wt.deliverynotes (customer, price, count, paid, date, product) VALUES (
+    ${getSQLStringForInsert(dn1)}),(${getSQLStringForInsert(
+    dn2
+  )}),(${getSQLStringForInsert(dn3)}),(${getSQLStringForInsert(
+    dn4
   )}),(${getSQLStringForInsert(dn5)})`;
   console.log(sqlInsert);
   runSQLCommand(sqlInsert);
