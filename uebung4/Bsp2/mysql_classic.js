@@ -1,5 +1,6 @@
 // docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:latest
-import mysql from 'mysql';
+var mysql = require('mysql');
+
 class Deliverynotes {
   constructor(customer, price, count, paid, date, product) {
     this.customer = customer;
